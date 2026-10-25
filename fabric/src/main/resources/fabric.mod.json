@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "alexyzer.fabric.ExampleModFabric"
+      "alexyzer.fabric.HextensionsFabric"
     ],
     "client": [
-      "alexyzer.fabric.client.ExampleModFabricClient"
+      "alexyzer.fabric.client.HextensionsFabricClient"
     ]
   },
   "mixins": [

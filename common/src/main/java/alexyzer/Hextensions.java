@@ -1,6 +1,6 @@
 package alexyzer;
 
-public final class ExampleMod {
+public final class Hextensions {
     public static final String MOD_ID = "hextensions";
 
     public static void init() {
