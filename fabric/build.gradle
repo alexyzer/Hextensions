@@ -36,8 +36,18 @@ dependencies {
     //Hex Casting fabric
     modImplementation(rootProject.files("libs/hexcasting-fabric-$rootProject.minecraft_version-${rootProject.hexcasting_version}.jar"))
 
-    common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
-    shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
+    //HexCasting runtime dependencies
+    /* Paucal  * * * * * * * * */ modRuntimeOnly("at.petra-k:paucal:$rootProject.paucal_version+$rootProject.minecraft_version-fabric")
+    /* Patchouli * * * * * * * */ modRuntimeOnly("vazkii.patchouli:Patchouli:$rootProject.minecraft_version-$rootProject.patchouli_version-FABRIC-SNAPSHOT")
+    /* Fabric Language Kotlin  */ modRuntimeOnly("net.fabricmc:fabric-language-kotlin:$rootProject.kotlin_fabric_version")
+    /* Cloth Config API  * * * */ modRuntimeOnly("me.shedaniel.cloth:cloth-config-fabric:$rootProject.cloth_config_version")
+    /* Cardinal Components API */ modRuntimeOnly("org.ladysnake.cardinal-components-api:cardinal-components-api:$rootProject.cardinal_components_version")
+    /* Fabric API  * * * * * * */ modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version")
+    /* Inline  * * * * * * * * */ modRuntimeOnly("com.samsthenerd.inline:inline-fabric:$rootProject.minecraft_version-$rootProject.inline_version")
+
+    //Inline runtime dependencies
+    /* Cloth Config API */ modRuntimeOnly("me.shedaniel.cloth:cloth-config-fabric:$rootProject.cloth_config_version")
+    /* Fabric API * * * */ modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version")
 }
 
 processResources {
