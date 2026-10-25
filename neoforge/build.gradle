@@ -39,6 +39,29 @@ dependencies {
 
     //Hex Casting neoforge
     modImplementation(rootProject.files("libs/hexcasting-neoforge-$rootProject.minecraft_version-${rootProject.hexcasting_version}.jar"))
+
+    //HexCasting runtime dependencies
+    /* Patchouli  * * * */ modRuntimeOnly("vazkii.patchouli:Patchouli:$rootProject.minecraft_version-$rootProject.patchouli_version-NEOFORGE-SNAPSHOT")
+    /* ClothConfig API  */ modRuntimeOnly("me.shedaniel.cloth:cloth-config-neoforge:$rootProject.cloth_config_version")
+    /* Curios * * * * * */ modRuntimeOnly("top.theillusivec4.curios:curios-neoforge:$rootProject.curios_version+$rootProject.minecraft_version")
+    /* Caelus * * * * * */ modRuntimeOnly("com.illusivesoulworks.caelus:caelus-neoforge:$rootProject.caeulus_version+$rootProject.minecraft_version")
+    /* Kotlin for Forge */ modRuntimeOnly("thedarkcolour:kotlinforforge-neoforge:$kotlin_forge_version")
+    forgeRuntimeLibrary("org.jetbrains.kotlin:kotlin-reflect:2.1.20")
+    forgeRuntimeLibrary("org.jetbrains.kotlin:kotlin-stdlib:2.1.20")
+    forgeRuntimeLibrary("org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.20")
+    forgeRuntimeLibrary("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.20")
+    forgeRuntimeLibrary("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2")
+    forgeRuntimeLibrary("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.10.2")
+    forgeRuntimeLibrary("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.8.1")
+    forgeRuntimeLibrary("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.8.1")
+    /* Inline * * * * * */ modRuntimeOnly("com.samsthenerd.inline:inline-neoforge:$rootProject.minecraft_version-$rootProject.inline_version")
+    /* Paucal * * * * * */ modRuntimeOnly("at.petra-k:paucal:$rootProject.paucal_version+$rootProject.minecraft_version-neoforge")
+
+    //Inline runtime dependencies
+    /* Cloth Config API */ modRuntimeOnly("me.shedaniel.cloth:cloth-config-neoforge:$rootProject.cloth_config_version")
+
+    //Paucal runtime dependencies
+    /* Architectury API */ modRuntimeOnly "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
 }
 
 processResources {

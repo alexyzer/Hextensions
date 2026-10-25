@@ -47,6 +47,18 @@ subprojects {
             name 'Ladysnake Mods'
             url 'https://maven.ladysnake.org/releases'
         }
+
+        //Kotlin for Forge
+        maven {
+            name "Kotlin for Forge"
+            url "https://thedarkcolour.github.io/KotlinForForge/"
+        }
+
+        //Caeulus
+        maven {
+            name "C4's Maven"
+            url "https://maven.theillusivec4.top/"
+        }
     }
 
     loom {
