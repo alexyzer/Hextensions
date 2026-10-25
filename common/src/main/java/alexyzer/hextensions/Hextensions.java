@@ -1,4 +1,4 @@
-package alexyzer;
+package alexyzer.hextensions;
 
 public final class Hextensions {
     public static final String MOD_ID = "hextensions";

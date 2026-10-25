@@ -1,4 +1,4 @@
-package alexyzer.fabric.client;
+package alexyzer.hextensions.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

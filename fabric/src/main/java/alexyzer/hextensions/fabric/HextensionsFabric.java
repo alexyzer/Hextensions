@@ -1,8 +1,8 @@
-package alexyzer.fabric;
+package alexyzer.hextensions.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import alexyzer.Hextensions;
+import alexyzer.hextensions.Hextensions;
 
 public final class HextensionsFabric implements ModInitializer {
     @Override

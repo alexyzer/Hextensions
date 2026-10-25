@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "alexyzer.fabric.HextensionsFabric"
+      "alexyzer.hextensions.fabric.HextensionsFabric"
     ],
     "client": [
-      "alexyzer.fabric.client.HextensionsFabricClient"
+      "alexyzer.hextensions.fabric.client.HextensionsFabricClient"
     ]
   },
   "mixins": [

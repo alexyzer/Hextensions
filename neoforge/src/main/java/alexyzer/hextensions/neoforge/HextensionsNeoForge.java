@@ -1,8 +1,8 @@
-package alexyzer.neoforge;
+package alexyzer.hextensions.neoforge;
 
 import net.neoforged.fml.common.Mod;
 
-import alexyzer.Hextensions;
+import alexyzer.hextensions.Hextensions;
 
 @Mod(Hextensions.MOD_ID)
 public final class HextensionsNeoForge {
