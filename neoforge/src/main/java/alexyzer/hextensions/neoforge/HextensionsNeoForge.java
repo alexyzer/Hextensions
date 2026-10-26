@@ -4,7 +4,6 @@ import alexyzer.hextensions.lib.actions.string.OpChatString;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.common.lib.HexRegistries;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
@@ -28,7 +27,7 @@ public final class HextensionsNeoForge {
     @SubscribeEvent
     public static void onRegister(RegisterEvent event) {
         event.register(HexRegistries.IOTA_TYPE, helper -> {
-            helper.register(modLoc("string"), StringIota.TYPE);
+            helper.register(StringIota.RESOURCE_LOCATION, StringIota.TYPE);
         });
         event.register(NeoForgeRegistries.ATTACHMENT_TYPES.key(), helper -> {
             helper.register(modLoc("last_message"), NeoForgeChatHandler.LAST_MESSAGE_ATTACHMENT);

@@ -1,5 +1,6 @@
 package alexyzer.hextensions.lib.iota;
 
+import alexyzer.hextensions.Hextensions;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
@@ -9,12 +10,14 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class StringIota extends Iota {
 
     public final static int MAX_SIZE = 1000;
+    public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("string");
 
     public @NotNull String value;
 
