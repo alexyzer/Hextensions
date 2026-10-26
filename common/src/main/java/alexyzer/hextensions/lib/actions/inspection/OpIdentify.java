@@ -1,4 +1,4 @@
-package alexyzer.hextensions.lib.actions.string;
+package alexyzer.hextensions.lib.actions.inspection;
 
 import alexyzer.hextensions.Hextensions;
 import alexyzer.hextensions.HextensionsUtil;

@@ -1,7 +1,7 @@
 package alexyzer.hextensions.neoforge;
 
 import alexyzer.hextensions.lib.actions.string.OpChatString;
-import alexyzer.hextensions.lib.actions.string.OpIdentify;
+import alexyzer.hextensions.lib.actions.inspection.OpIdentify;
 import alexyzer.hextensions.lib.arithmetic.StringArithmetic;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
