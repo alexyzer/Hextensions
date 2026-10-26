@@ -8,6 +8,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
@@ -39,7 +40,7 @@ public class StringIota extends Iota {
 
     @Override
     public Component display() {
-        return Component.literal(String.format("\"%s\"", value));
+        return Component.literal(String.format("\"%s\"", value)).setStyle(STYLE);
     }
 
     @Override
@@ -75,4 +76,6 @@ public class StringIota extends Iota {
             return 0xff_990099;
         }
     };
+
+    static public final Style STYLE = Style.EMPTY.withColor(TYPE.color());
 }
