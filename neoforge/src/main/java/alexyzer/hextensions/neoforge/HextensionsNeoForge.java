@@ -1,6 +1,7 @@
 package alexyzer.hextensions.neoforge;
 
 import alexyzer.hextensions.lib.actions.string.OpChatString;
+import alexyzer.hextensions.lib.arithmetic.StringArithmetic;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.common.lib.HexRegistries;
@@ -34,6 +35,9 @@ public final class HextensionsNeoForge {
         });
         event.register(HexRegistries.ACTION, helper -> {
             helper.register(OpChatString.RESOURCE_LOCATION, new ActionRegistryEntry(OpChatString.PATTERN, OpChatString.INSTANCE));
+        });
+        event.register(HexRegistries.ARITHMETIC, helper -> {
+            helper.register(StringArithmetic.RESOURCE_LOCATION, StringArithmetic.INSTANCE);
         });
     }
 }
