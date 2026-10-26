@@ -72,8 +72,8 @@ public class StringIota extends Iota {
 
         @Override
         public int color() {
-            //A bit darker purple than ListIota
-            return 0xff_990099;
+            //Teal
+            return 0xff_0088cc;
         }
     };
 
