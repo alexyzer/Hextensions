@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "alexyzer.mixin",
+  "package": "alexyzer.hextensions.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
