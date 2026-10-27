@@ -1,7 +1,7 @@
 package alexyzer.hextensions.lib.actions.inspection;
 
 import alexyzer.hextensions.Hextensions;
-import alexyzer.hextensions.HextensionsUtil;
+import alexyzer.hextensions.util.Misc;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
@@ -15,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.Property;
 import org.jetbrains.annotations.NotNull;
 
-public class OpListProperties implements HextensionsUtil.UnaryOpAction {
+public class OpListProperties implements Misc.UnaryOpAction {
 
     public final static OpListProperties INSTANCE = new OpListProperties();
     public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("list_properties");
@@ -26,7 +26,7 @@ public class OpListProperties implements HextensionsUtil.UnaryOpAction {
         if (!(iota instanceof Vec3Iota vecIota)) throw MishapInvalidIota.ofType(iota, 0, "vector");
 
         var world = env.getWorld();
-        var blockPos = HextensionsUtil.blockPosOf(vecIota.getVec3());
+        var blockPos = Misc.blockPosOf(vecIota.getVec3());
         var block = world.getBlockState(blockPos);
 
         var propertyList = new TreeList.TreeListBuilder<Iota>();

@@ -4,6 +4,7 @@ import alexyzer.hextensions.Hextensions;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
+import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -78,4 +79,9 @@ public class StringIota extends Iota {
     };
 
     static public final Style STYLE = Style.EMPTY.withColor(TYPE.color());
+
+    public static StringIota expect(Iota iota, int reverseIdx) throws MishapInvalidIota {
+        if (iota instanceof StringIota stringIota) return stringIota;
+        throw MishapInvalidIota.ofType(iota, reverseIdx, "string");
+    }
 }

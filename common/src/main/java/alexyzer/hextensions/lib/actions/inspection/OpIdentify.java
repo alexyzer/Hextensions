@@ -1,7 +1,7 @@
 package alexyzer.hextensions.lib.actions.inspection;
 
 import alexyzer.hextensions.Hextensions;
-import alexyzer.hextensions.HextensionsUtil;
+import alexyzer.hextensions.util.Misc;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.EntityIota;
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class OpIdentify implements HextensionsUtil.UnaryOpAction {
+public class OpIdentify implements Misc.UnaryOpAction {
 
     public static final OpIdentify INSTANCE = new OpIdentify();
     public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("identify");
@@ -27,7 +27,7 @@ public class OpIdentify implements HextensionsUtil.UnaryOpAction {
         var world = env.getWorld();
 
         if (iota instanceof Vec3Iota vecIota) {
-            var block = world.getBlockState(HextensionsUtil.blockPosOf(vecIota.getVec3()));
+            var block = world.getBlockState(Misc.blockPosOf(vecIota.getVec3()));
             var identifier = BuiltInRegistries.BLOCK.getKey(block.getBlock());
             return new StringIota(identifier.toString());
         }

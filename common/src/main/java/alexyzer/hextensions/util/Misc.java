@@ -1,4 +1,4 @@
-package alexyzer.hextensions;
+package alexyzer.hextensions.util;
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class HextensionsUtil {
+public class Misc {
     public static BlockPos blockPosOf(Vec3 vec3) {
         return new BlockPos(
                 (int) Math.floor(vec3.x),
