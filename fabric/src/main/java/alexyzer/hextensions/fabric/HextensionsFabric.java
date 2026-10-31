@@ -4,6 +4,7 @@ import alexyzer.hextensions.lib.actions.inspection.OpGetProperty;
 import alexyzer.hextensions.lib.actions.inspection.OpIdentify;
 import alexyzer.hextensions.lib.actions.inspection.OpListProperties;
 import alexyzer.hextensions.lib.actions.string.OpChatString;
+import alexyzer.hextensions.lib.actions.string.OpToString;
 import alexyzer.hextensions.lib.arithmetic.StringArithmetic;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
@@ -26,6 +27,7 @@ public final class HextensionsFabric implements ModInitializer {
         Registry.register(IOTA_TYPE_REGISTRY, StringIota.RESOURCE_LOCATION, StringIota.TYPE);
 
         Registry.register(ACTION_REGISTRY, OpChatString.RESOURCE_LOCATION, new ActionRegistryEntry(OpChatString.PATTERN, OpChatString.INSTANCE));
+        Registry.register(ACTION_REGISTRY, OpToString.RESOURCE_LOCATION, new ActionRegistryEntry(OpToString.PATTERN, OpToString.INSTANCE));
         Registry.register(ACTION_REGISTRY, OpIdentify.RESOURCE_LOCATION, new ActionRegistryEntry(OpIdentify.PATTERN, OpIdentify.INSTANCE));
         Registry.register(ACTION_REGISTRY, OpListProperties.RESOURCE_LOCATION, new ActionRegistryEntry(OpListProperties.PATTERN, OpListProperties.INSTANCE));
         Registry.register(ACTION_REGISTRY, OpGetProperty.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetProperty.PATTERN, OpGetProperty.INSTANCE));

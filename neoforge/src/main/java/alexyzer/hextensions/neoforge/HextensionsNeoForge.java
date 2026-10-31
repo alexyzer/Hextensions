@@ -4,6 +4,7 @@ import alexyzer.hextensions.lib.actions.inspection.OpGetProperty;
 import alexyzer.hextensions.lib.actions.inspection.OpListProperties;
 import alexyzer.hextensions.lib.actions.string.OpChatString;
 import alexyzer.hextensions.lib.actions.inspection.OpIdentify;
+import alexyzer.hextensions.lib.actions.string.OpToString;
 import alexyzer.hextensions.lib.arithmetic.StringArithmetic;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
@@ -26,6 +27,7 @@ public final class HextensionsNeoForge {
 
         event.register(HexRegistries.ACTION, helper -> {
             helper.register(OpChatString.RESOURCE_LOCATION, new ActionRegistryEntry(OpChatString.PATTERN, OpChatString.INSTANCE));
+            helper.register(OpToString.RESOURCE_LOCATION, new ActionRegistryEntry(OpToString.PATTERN, OpToString.INSTANCE));
             helper.register(OpIdentify.RESOURCE_LOCATION, new ActionRegistryEntry(OpIdentify.PATTERN, OpIdentify.INSTANCE));
             helper.register(OpListProperties.RESOURCE_LOCATION, new ActionRegistryEntry(OpListProperties.PATTERN, OpListProperties.INSTANCE));
             helper.register(OpGetProperty.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetProperty.PATTERN, OpGetProperty.INSTANCE));
