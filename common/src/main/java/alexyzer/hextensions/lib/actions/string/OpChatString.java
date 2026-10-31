@@ -19,7 +19,7 @@ import java.util.List;
 public class OpChatString implements ConstMediaAction {
 
     public static final OpChatString INSTANCE = new OpChatString();
-    public static final HexPattern PATTERN = HexPattern.fromAngleString("waqa", HexDir.EAST);
+    public static final HexPattern PATTERN = HexPattern.fromAngleString("qa", HexDir.NORTH_EAST);
     public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("chat_string");
 
     @Override
