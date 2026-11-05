@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 public class OpGetIotaType implements UnaryOpAction {
 
     public static final OpGetIotaType INSTANCE = new OpGetIotaType();
-    public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("get_iota_type");
+    public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("iota_type");
     public static final HexPattern PATTERN = HexPattern.fromAngleString("wdd", HexDir.EAST);
 
     @Override

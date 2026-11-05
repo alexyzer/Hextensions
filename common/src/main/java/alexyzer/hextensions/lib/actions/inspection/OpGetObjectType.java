@@ -20,7 +20,7 @@ import java.util.List;
 public class OpGetObjectType implements Misc.UnaryOpAction {
 
     public static final OpGetObjectType INSTANCE = new OpGetObjectType();
-    public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("get_object_type");
+    public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("object_type");
     public static final HexPattern PATTERN = HexPattern.fromAngleString("waa", HexDir.EAST);
 
     @Override
