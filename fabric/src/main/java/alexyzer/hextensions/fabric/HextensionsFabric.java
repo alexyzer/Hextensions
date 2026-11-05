@@ -1,7 +1,8 @@
 package alexyzer.hextensions.fabric;
 
+import alexyzer.hextensions.lib.actions.inspection.OpGetIotaType;
 import alexyzer.hextensions.lib.actions.inspection.OpGetProperty;
-import alexyzer.hextensions.lib.actions.inspection.OpIdentify;
+import alexyzer.hextensions.lib.actions.inspection.OpGetObjectType;
 import alexyzer.hextensions.lib.actions.inspection.OpListProperties;
 import alexyzer.hextensions.lib.actions.string.OpChatString;
 import alexyzer.hextensions.lib.actions.string.OpToString;
@@ -28,7 +29,8 @@ public final class HextensionsFabric implements ModInitializer {
 
         Registry.register(ACTION_REGISTRY, OpChatString.RESOURCE_LOCATION, new ActionRegistryEntry(OpChatString.PATTERN, OpChatString.INSTANCE));
         Registry.register(ACTION_REGISTRY, OpToString.RESOURCE_LOCATION, new ActionRegistryEntry(OpToString.PATTERN, OpToString.INSTANCE));
-        Registry.register(ACTION_REGISTRY, OpIdentify.RESOURCE_LOCATION, new ActionRegistryEntry(OpIdentify.PATTERN, OpIdentify.INSTANCE));
+        Registry.register(ACTION_REGISTRY, OpGetObjectType.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetObjectType.PATTERN, OpGetObjectType.INSTANCE));
+        Registry.register(ACTION_REGISTRY, OpGetIotaType.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetIotaType.PATTERN, OpGetIotaType.INSTANCE));
         Registry.register(ACTION_REGISTRY, OpListProperties.RESOURCE_LOCATION, new ActionRegistryEntry(OpListProperties.PATTERN, OpListProperties.INSTANCE));
         Registry.register(ACTION_REGISTRY, OpGetProperty.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetProperty.PATTERN, OpGetProperty.INSTANCE));
 
