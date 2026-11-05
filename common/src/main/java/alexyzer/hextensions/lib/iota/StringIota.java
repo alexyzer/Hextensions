@@ -1,6 +1,7 @@
 package alexyzer.hextensions.lib.iota;
 
 import alexyzer.hextensions.Hextensions;
+import alexyzer.hextensions.lib.mishap.MishapStringTooBig;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
@@ -18,13 +19,14 @@ import org.jetbrains.annotations.Nullable;
 
 public class StringIota extends Iota {
 
-    public final static int MAX_SIZE = 1000;
+    public final static int MAX_SIZE = 4096;
     public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("string");
 
     public @NotNull String value;
 
-    public StringIota(@NotNull String value) {
+    public StringIota(@NotNull String value) throws MishapStringTooBig {
         super(() -> TYPE);
+        if (value.length() > MAX_SIZE) throw new MishapStringTooBig();
         this.value = value;
     }
 
@@ -77,6 +79,12 @@ public class StringIota extends Iota {
             return 0xff_0088cc;
         }
     };
+
+    @Override
+    public int size() {
+        //1 per new 32 characters
+        return (value.length() + 32) / 32;
+    }
 
     static public final Style STYLE = Style.EMPTY.withColor(TYPE.color());
 
