@@ -1,0 +1,8 @@
+{
+  "hextensions.iota.hextensions:string": "String",
+  "hextensions.iota.hextensions:string.desc": "a string",
+  "hexcasting.action.hextensions:string/chat_string": "Mumble Reflection",
+  "hexcasting.action.hextensions:string/tostring": "Reciter's Purification",
+  "hexcasting.action.hextensions:inspection/object_type": "Nomenclator's Purification",
+  "hexcasting.action.hextensions:inspection/iota_type": "Classifier's Purification"
+}
