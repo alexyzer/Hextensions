@@ -3,13 +3,13 @@ package alexyzer.hextensions.lib.actions.inspection;
 import alexyzer.hextensions.Hextensions;
 import alexyzer.hextensions.util.Misc;
 import alexyzer.hextensions.lib.iota.StringIota;
+import at.petrak.hexcasting.api.casting.PatternShapeMatch;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
-import at.petrak.hexcasting.api.casting.iota.EntityIota;
-import at.petrak.hexcasting.api.casting.iota.Iota;
-import at.petrak.hexcasting.api.casting.iota.Vec3Iota;
+import at.petrak.hexcasting.api.casting.iota.*;
 import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidOperatorArgs;
+import at.petrak.hexcasting.common.casting.PatternRegistryManifest;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.locale.Language;
 import net.minecraft.resources.ResourceLocation;
@@ -26,6 +26,24 @@ public class OpGetObjectType implements Misc.UnaryOpAction {
     @Override
     public @NotNull Iota evaluate(@NotNull Iota iota, @NotNull CastingEnvironment env) {
         var world = env.getWorld();
+
+        if (iota instanceof PatternIota patternIota) {
+            var pattern = patternIota.getPattern();
+            var match = PatternRegistryManifest.matchPattern(pattern, env);
+
+            //Allow only normal and special patterns, no per-world
+            var name = switch (match) {
+                case PatternShapeMatch.Normal normalMatch -> {
+                    var normalKey = "hexcasting.action." + normalMatch.key.location();
+                    yield Language.getInstance().getOrDefault(normalKey);
+                }
+                case PatternShapeMatch.Special specialMatch -> specialMatch.handler.getName().getString();
+                default -> null;
+            };
+            if (name == null) return new NullIota();
+
+            return new StringIota(name);
+        }
 
         var nameKey = switch (iota) {
             case Vec3Iota vecIota -> {
