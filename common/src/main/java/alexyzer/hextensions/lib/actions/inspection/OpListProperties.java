@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 public class OpListProperties implements Misc.UnaryOpAction {
 
     public final static OpListProperties INSTANCE = new OpListProperties();
-    public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("list_properties");
+    public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("inspection/list_properties");
     public final static HexPattern PATTERN = HexPattern.fromAngleString("eqqqqqa", HexDir.NORTH_EAST);
 
     @Override

@@ -20,7 +20,7 @@ public class OpChatString implements ConstMediaAction {
 
     public static final OpChatString INSTANCE = new OpChatString();
     public static final HexPattern PATTERN = HexPattern.fromAngleString("aade", HexDir.WEST);
-    public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("chat_string");
+    public static final ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("string/chat_string");
 
     @Override
     public int getArgc() {

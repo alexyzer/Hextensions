@@ -16,7 +16,7 @@ import static alexyzer.hextensions.Hextensions.modLoc;
 public class OpToString implements UnaryOpAction {
 
     public static final OpToString INSTANCE = new OpToString();
-    public static final ResourceLocation RESOURCE_LOCATION = modLoc("tostring");
+    public static final ResourceLocation RESOURCE_LOCATION = modLoc("string/tostring");
     public static final HexPattern PATTERN = HexPattern.fromAngleString("aad", HexDir.WEST);
 
     @Override

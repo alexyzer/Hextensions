@@ -19,7 +19,7 @@ import java.util.List;
 public class OpGetProperty implements ConstMediaAction {
 
     public final static OpGetProperty INSTANCE = new OpGetProperty();
-    public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("get_property");
+    public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("inspection/get_property");
     public final static HexPattern PATTERN = HexPattern.fromAngleString("qeeeeed", HexDir.NORTH_EAST);
 
     @Override
