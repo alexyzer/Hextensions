@@ -1,4 +1,4 @@
-package alexyzer.hextensions.lib.actions.string;
+package alexyzer.hextensions.lib.action.string;
 
 import alexyzer.hextensions.lib.iota.StringIota;
 import alexyzer.hextensions.util.Misc.UnaryOpAction;

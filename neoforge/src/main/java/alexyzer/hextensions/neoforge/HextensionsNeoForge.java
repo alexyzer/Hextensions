@@ -1,11 +1,11 @@
 package alexyzer.hextensions.neoforge;
 
-import alexyzer.hextensions.lib.actions.inspection.OpGetIotaType;
-import alexyzer.hextensions.lib.actions.inspection.OpGetProperty;
-import alexyzer.hextensions.lib.actions.inspection.OpListProperties;
-import alexyzer.hextensions.lib.actions.string.OpChatString;
-import alexyzer.hextensions.lib.actions.inspection.OpGetObjectType;
-import alexyzer.hextensions.lib.actions.string.OpToString;
+import alexyzer.hextensions.lib.action.inspection.OpGetIotaType;
+import alexyzer.hextensions.lib.action.inspection.OpGetProperty;
+import alexyzer.hextensions.lib.action.inspection.OpListProperties;
+import alexyzer.hextensions.lib.action.string.OpChatString;
+import alexyzer.hextensions.lib.action.inspection.OpGetObjectType;
+import alexyzer.hextensions.lib.action.string.OpToString;
 import alexyzer.hextensions.lib.arithmetic.StringArithmetic;
 import alexyzer.hextensions.lib.iota.StringIota;
 import at.petrak.hexcasting.api.casting.ActionRegistryEntry;

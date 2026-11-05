@@ -1,4 +1,4 @@
-package alexyzer.hextensions.lib.actions.string;
+package alexyzer.hextensions.lib.action.string;
 
 import alexyzer.hextensions.util.LastMessageHandler;
 import alexyzer.hextensions.Hextensions;
