@@ -90,6 +90,6 @@ public class StringIota extends Iota {
 
     public static StringIota expect(Iota iota, int reverseIdx) throws MishapInvalidIota {
         if (iota instanceof StringIota stringIota) return stringIota;
-        throw MishapInvalidIota.ofType(iota, reverseIdx, "string");
+        throw MishapInvalidIota.ofType(iota, reverseIdx, RESOURCE_LOCATION.toString());
     }
 }

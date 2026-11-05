@@ -1,6 +1,7 @@
 {
   "hexcasting.iota.hextensions:string": "String",
   "hexcasting.iota.hextensions:string.desc": "a string",
+  "hexcasting.mishap.invalid_value.class.hextensions:string": "a string",
   "hexcasting.action.hextensions:string/chat_string": "Mumble Reflection",
   "hexcasting.action.hextensions:string/tostring": "Reciter's Purification",
   "hexcasting.action.hextensions:string/tonumber": "Numerologist's Purification",
