@@ -25,6 +25,6 @@ public class MishapStringTooBig extends Mishap {
 
     @Override
     protected @Nullable Component errorMessage(@NotNull CastingEnvironment castingEnvironment, @NotNull Mishap.Context context) {
-        return Component.translatable("hexcasting.mishap.hextensions:string_too_big");
+        return error("hextensions:string_too_big");
     }
 }
