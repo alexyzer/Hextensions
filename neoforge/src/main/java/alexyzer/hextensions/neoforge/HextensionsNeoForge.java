@@ -3,6 +3,7 @@ package alexyzer.hextensions.neoforge;
 import alexyzer.hextensions.lib.action.inspection.OpGetIotaType;
 import alexyzer.hextensions.lib.action.inspection.OpGetProperty;
 import alexyzer.hextensions.lib.action.inspection.OpListProperties;
+import alexyzer.hextensions.lib.action.manipulation.OpDrop;
 import alexyzer.hextensions.lib.action.string.OpChatString;
 import alexyzer.hextensions.lib.action.inspection.OpGetObjectType;
 import alexyzer.hextensions.lib.action.string.OpToNumber;
@@ -35,6 +36,7 @@ public final class HextensionsNeoForge {
             helper.register(OpGetIotaType.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetIotaType.PATTERN, OpGetIotaType.INSTANCE));
             helper.register(OpListProperties.RESOURCE_LOCATION, new ActionRegistryEntry(OpListProperties.PATTERN, OpListProperties.INSTANCE));
             helper.register(OpGetProperty.RESOURCE_LOCATION, new ActionRegistryEntry(OpGetProperty.PATTERN, OpGetProperty.INSTANCE));
+            helper.register(OpDrop.RESOURCE_LOCATION, new ActionRegistryEntry(OpDrop.PATTERN, OpDrop.INSTANCE));
         });
 
         event.register(HexRegistries.ARITHMETIC, helper ->
