@@ -11,6 +11,7 @@ import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota;
 import at.petrak.hexcasting.api.utils.TreeList;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.Property;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +27,7 @@ public class OpListProperties implements Misc.UnaryOpAction {
         if (!(iota instanceof Vec3Iota vecIota)) throw MishapInvalidIota.ofType(iota, 0, "vector");
 
         var world = env.getWorld();
-        var blockPos = Misc.blockPosOf(vecIota.getVec3());
+        var blockPos = BlockPos.containing(vecIota.getVec3());
         var block = world.getBlockState(blockPos);
 
         var propertyList = new TreeList.TreeListBuilder<Iota>();

@@ -2,7 +2,6 @@ package alexyzer.hextensions.lib.action.inspection;
 
 import alexyzer.hextensions.Hextensions;
 import alexyzer.hextensions.lib.iota.StringIota;
-import alexyzer.hextensions.util.Misc;
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.*;
@@ -10,6 +9,7 @@ import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.casting.mishaps.Mishap;
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.Property;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +34,7 @@ public class OpGetProperty implements ConstMediaAction {
         var property = StringIota.expect(stack.get(stackSize - 1), 0).value;
 
         if (target instanceof Vec3Iota vecIota) {
-            var block = env.getWorld().getBlockState(Misc.blockPosOf(vecIota.getVec3()));
+            var block = env.getWorld().getBlockState(BlockPos.containing(vecIota.getVec3()));
 
             for (Property<?> blockProperty : block.getProperties())
                 if (blockProperty.getName().equals(property)) {

@@ -10,6 +10,7 @@ import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidOperatorArgs;
 import at.petrak.hexcasting.common.casting.PatternRegistryManifest;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.locale.Language;
 import net.minecraft.resources.ResourceLocation;
@@ -47,7 +48,7 @@ public class OpGetObjectType implements Misc.UnaryOpAction {
 
         var nameKey = switch (iota) {
             case Vec3Iota vecIota -> {
-                var blockPos = Misc.blockPosOf(vecIota.getVec3());
+                var blockPos = BlockPos.containing(vecIota.getVec3());
                 env.assertPosInRange(blockPos);
                 var block = world.getBlockState(blockPos);
                 yield BuiltInRegistries.BLOCK.getKey(block.getBlock()).toLanguageKey("block");
