@@ -25,6 +25,7 @@
   "mixins": [
     "hextensions.mixins.json"
   ],
+  "accessWidener" : "hextensions.accesswidener",
   "depends": {
     "fabricloader": ">=0.20.1",
     "minecraft": "~1.21.1",

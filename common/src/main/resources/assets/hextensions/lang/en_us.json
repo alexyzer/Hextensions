@@ -8,5 +8,7 @@
   "hexcasting.action.hextensions:inspection/object_type": "Nomenclator's Purification",
   "hexcasting.action.hextensions:inspection/iota_type": "Classifier's Purification",
   "hexcasting.action.hextensions:manipulation/drop": "Drop",
-  "hexcasting.mishap.hextensions:string_too_big": "Exceeded the size limit of a string"
+  "hexcasting.action.hextensions:manipulation/swap": "Swap",
+  "hexcasting.mishap.hextensions:string_too_big": "Exceeded the size limit of a string",
+  "hexcasting.mishap.bad_block.hextensions:with_inventory": "something with inventory"
 }
