@@ -17,7 +17,7 @@ public class OpToNumber implements UnaryOpAction {
 
     public static final OpToNumber INSTANCE = new OpToNumber();
     public static final ResourceLocation RESOURCE_LOCATION = modLoc("string/tonumber");
-    public static final HexPattern PATTERN = HexPattern.fromAngleString("aadqa", HexDir.WEST);
+    public static final HexPattern PATTERN = HexPattern.fromAngleString("aadaqaa", HexDir.WEST);
 
     @Override
     public @NotNull Iota evaluate(@NotNull Iota iota, @NotNull CastingEnvironment env) {

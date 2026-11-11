@@ -1,14 +1,29 @@
 {
+  "hexcasting.action.hextensions:manipulation/drop": "Drop",
+
+  "hexcasting.action.hextensions:manipulation/swap": "Swap",
+  "hexcasting.mishap.hextensions:bad_swap_target": "something to swap items with",
+
+
   "hexcasting.iota.hextensions:string": "String",
   "hexcasting.iota.hextensions:string.desc": "a string",
   "hexcasting.mishap.invalid_value.class.hextensions:string": "a string",
-  "hexcasting.action.hextensions:string/chat_string": "Mumble Reflection",
-  "hexcasting.action.hextensions:string/tostring": "Reciter's Purification",
-  "hexcasting.action.hextensions:string/tonumber": "Numerologist's Purification",
-  "hexcasting.action.hextensions:inspection/object_type": "Nomenclator's Purification",
-  "hexcasting.action.hextensions:inspection/iota_type": "Classifier's Purification",
-  "hexcasting.action.hextensions:manipulation/drop": "Drop",
-  "hexcasting.action.hextensions:manipulation/swap": "Swap",
   "hexcasting.mishap.hextensions:string_too_big": "Exceeded the size limit of a string",
-  "hexcasting.mishap.hextensions:bad_swap_target": "something to swap items with"
+
+  "hextensions.entry.strings" : "Strings",
+
+  "hexcasting.action.hextensions:string/tostring": "Reciter's Prfn.",
+  "hextensions.page.strings.tostring" : "Convert an argument to its string representation.",
+
+  "hexcasting.action.hextensions:string/tonumber": "Parsing Prfn.",
+  "hextensions.page.strings.tonumber" : "If the string argument can be represented as a number, returns that number, otherwise returns null.",
+
+  "hexcasting.action.hextensions:inspection/object_type": "Nomenclator's Prfn.",
+  "hextensions.page.inspection.object_type" : "Get the object type of the argument.",
+
+  "hexcasting.action.hextensions:inspection/iota_type": "Classifier's Prfn.",
+  "hextensions.page.inspection.iota_type" : "Get the iota type of the argument.",
+
+  "hexcasting.action.hextensions:string/chat_string": "Mumble Reflection",
+  "hextensions.page.strings.chat_string" : "Adds last thing you said to the top of the stack."
 }

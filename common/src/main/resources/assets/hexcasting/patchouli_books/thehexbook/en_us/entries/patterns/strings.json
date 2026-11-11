@@ -1,0 +1,122 @@
+{
+  "name": "hextensions.entry.strings",
+  "category": "hexcasting:patterns",
+  "icon": "minecraft:string",
+  "sortnum": 8,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hextensions:string/tostring",
+      "anchor": "hextensions:string/tostring",
+      "input": "any",
+      "output": "string",
+      "text": "hextensions.page.strings.tostring"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hextensions:string/tonumber",
+      "anchor": "hextensions:string/tonumber",
+      "input": "string",
+      "output": "number or null",
+      "text": "hextensions.page.strings.tonumber"
+    },
+
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hextensions:inspection/object_type",
+      "anchor": "hextensions:inspection/object_type",
+      "input": "entity | vector",
+      "output": "string",
+      "text": "hextensions.page.inspection.object_type"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hextensions:inspection/iota_type",
+      "anchor": "hextensions:inspection/iota_type",
+      "input": "any",
+      "output": "string",
+      "text": "hextensions.page.inspection.iota_type"
+    },
+
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hextensions:string/chat_string",
+      "anchor": "hextensions:string/chat_string",
+      "input": "",
+      "output": "string",
+      "text": "hextensions.page.strings.chat_string"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:index",
+      "anchor": "hexcasting:index",
+      "input": "string, number",
+      "output": "any",
+      "text": "hexcasting.page.lists.index"
+    },
+
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:slice",
+      "anchor": "hexcasting:slice",
+      "input": "string, num, num",
+      "output": "string",
+      "text": "hexcasting.page.lists.slice"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "header": "hexcasting.action.hexcasting:add",
+      "op_id": "hexcasting:add",
+      "anchor": "hexcasting:add",
+      "input": "string, string",
+      "output": "string",
+      "text": "hexcasting.page.lists.add"
+    },
+
+    {
+      "type": "hexcasting:pattern",
+      "header": "hexcasting.action.hexcasting:abs",
+      "op_id": "hexcasting:abs",
+      "anchor": "hexcasting:abs",
+      "input": "string",
+      "output": "num",
+      "text": "hexcasting.page.lists.abs"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:reverse",
+      "anchor": "hexcasting:reverse",
+      "input": "string",
+      "output": "string",
+      "text": "hexcasting.page.lists.reverse"
+    },
+
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:index_of",
+      "anchor": "hexcasting:index_of",
+      "input": "string, string",
+      "output": "num",
+      "text": "hexcasting.page.lists.index_of"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:remove_from",
+      "anchor": "hexcasting:remove_from",
+      "input": "string, num",
+      "output": "string",
+      "text": "hexcasting.page.lists.remove_from"
+    },
+
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:replace",
+      "anchor": "hexcasting:replace",
+      "input": "string, num, any",
+      "output": "string",
+      "text": "hexcasting.page.lists.replace"
+    }
+  ]
+}
