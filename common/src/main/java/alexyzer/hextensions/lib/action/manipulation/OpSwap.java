@@ -14,9 +14,12 @@ import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.casting.mishaps.*;
 import at.petrak.hexcasting.api.misc.MediaConstants;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.animal.horse.AbstractChestedHorse;
@@ -37,6 +40,8 @@ public class OpSwap implements SpellAction {
     public final static ResourceLocation RESOURCE_LOCATION = Hextensions.modLoc("manipulation/swap");
     public final static HexPattern PATTERN = HexPattern.fromAngleString("qaqqwqaa", HexDir.NORTH_EAST);
 
+    public static final MutableComponent EXPECTED_SWAP_TARGET = Component.translatable("hexcasting.mishap.hextensions:bad_swap_target");
+
     @Override
     public int getArgc() {
         /* target, slot -> */
@@ -48,7 +53,8 @@ public class OpSwap implements SpellAction {
         Object target;
         Vec3 targetPos;
         Function<Integer, SlotAccess> slotAccessor;
-        switch (args.getFirst()) {
+        var targetArg = args.getFirst();
+        switch (targetArg) {
             case EntityIota entityIota -> {
                 var entity = entityIota.getEntity(env.getWorld());
                 if (entity == null) throw MishapEntityNotFound.of(entityIota);
@@ -62,13 +68,13 @@ public class OpSwap implements SpellAction {
                 var blockPos = BlockPos.containing(vecIota.getVec3());
                 env.assertPosInRangeForEditing(blockPos);
                 if (!(env.getWorld().getBlockEntity(blockPos) instanceof Container container))
-                    throw MishapBadBlock.of(blockPos, "hextensions:with_inventory");
+                    throw new MishapBadBlock(blockPos, EXPECTED_SWAP_TARGET);
 
                 target = container;
                 targetPos = blockPos.getCenter();
                 slotAccessor = slotIdx -> SlotAccess.forContainer(container, slotIdx);
             }
-            default -> throw new MishapInvalidOperatorArgs(args);
+            default -> throw MishapInvalidIota.ofType(targetArg, 1, "entity_or_vector");
         }
 
         var slotIdx = getSlotIdxForTarget(target, args);
@@ -195,7 +201,7 @@ public class OpSwap implements SpellAction {
                 yield slotIdx;
             }
 
-            default -> throw new MishapInvalidOperatorArgs(args);
+            default -> throw new MishapBadEntity(((Entity) target), EXPECTED_SWAP_TARGET);
         };
     }
 }
