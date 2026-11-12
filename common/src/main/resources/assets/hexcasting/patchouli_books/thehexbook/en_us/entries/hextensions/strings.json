@@ -50,6 +50,23 @@
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "hextensions:string/set_chat_filter",
+      "anchor": "hextensions:string/set_chat_filter",
+      "input": "string or null",
+      "output": "",
+      "text": "hextensions.page.strings.set_chat_filter"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hextensions:string/get_chat_filter",
+      "anchor": "hextensions:string/get_chat_filter",
+      "input": "",
+      "output": "string or null",
+      "text": "hextensions.page.strings.get_chat_filter"
+    },
+
+    {
+      "type": "hexcasting:pattern",
       "op_id": "hexcasting:index",
       "anchor": "hexcasting:index",
       "input": "string, number",

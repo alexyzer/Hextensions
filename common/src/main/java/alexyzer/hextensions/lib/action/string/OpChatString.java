@@ -1,8 +1,8 @@
 package alexyzer.hextensions.lib.action.string;
 
-import alexyzer.hextensions.util.LastMessageHandler;
 import alexyzer.hextensions.Hextensions;
 import alexyzer.hextensions.lib.iota.StringIota;
+import alexyzer.hextensions.util.LastMessageHandler;
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.GarbageIota;
@@ -30,6 +30,6 @@ public class OpChatString implements ConstMediaAction {
     @Override
     public @NotNull List<Iota> execute(@NotNull List<? extends Iota> list, @NotNull CastingEnvironment castingEnvironment) throws Mishap {
         if (!(castingEnvironment.getCastingEntity() instanceof ServerPlayer player)) return List.of(new GarbageIota());
-        return List.of(new StringIota(LastMessageHandler.getLastMessage.apply(player).getString()));
+        return List.of(new StringIota(LastMessageHandler.getLastMessage.apply(player)));
     }
 }

@@ -8,14 +8,15 @@
   "hexcasting.iota.hextensions:string": "String",
   "hexcasting.iota.hextensions:string.desc": "a string",
   "hexcasting.mishap.invalid_value.class.hextensions:string": "a string",
+  "hexcasting.mishap.invalid_value.class.hextensions:string_or_null": "a string or a null",
   "hexcasting.mishap.hextensions:string_too_big": "Exceeded the size limit of a string",
 
   "hextensions.entry.strings" : "Strings",
 
-  "hexcasting.action.hextensions:string/tostring": "Reciter's Prfn.",
+  "hexcasting.action.hextensions:string/tostring": "Reciter's Purification",
   "hextensions.page.strings.tostring" : "Convert an argument to its string representation.",
 
-  "hexcasting.action.hextensions:string/tonumber": "Parsing Prfn.",
+  "hexcasting.action.hextensions:string/tonumber": "Parsing Purification",
   "hextensions.page.strings.tonumber" : "If the string argument can be represented as a number, returns that number, otherwise returns null.",
 
   "hexcasting.action.hextensions:inspection/object_type": "Nomenclator's Prfn.",
@@ -25,5 +26,11 @@
   "hextensions.page.inspection.iota_type" : "Get the iota type of the argument.",
 
   "hexcasting.action.hextensions:string/chat_string": "Mumble Reflection",
-  "hextensions.page.strings.chat_string" : "Adds last thing you said to the top of the stack."
+  "hextensions.page.strings.chat_string" : "Adds last thing you said to the top of the stack.",
+
+  "hexcasting.action.hextensions:string/set_chat_filter": "Conspiration Gambit",
+  "hextensions.page.strings.set_chat_filter" : "Sets or clears the prefix for $(l:hextensions/strings#hextensions:string/chat_string)$(action)Mumble Reflection/$.<br>If set, only messages prefixed by given string are captured. Such messages do not reach others' ears.",
+
+  "hexcasting.action.hextensions:string/get_chat_filter": "Disclosure Reflection",
+  "hextensions.page.strings.get_chat_filter" : "Pushes the last value passed to $(l:hextensions/strings#hextensions:string/set_chat_filter)$(action)Conspiration Gambit/$."
 }
