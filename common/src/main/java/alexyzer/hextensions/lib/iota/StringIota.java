@@ -5,6 +5,7 @@ import alexyzer.hextensions.lib.mishap.MishapStringTooBig;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
+import at.petrak.hexcasting.api.casting.iota.NullIota;
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -91,5 +92,13 @@ public class StringIota extends Iota {
     public static StringIota expect(Iota iota, int reverseIdx) throws MishapInvalidIota {
         if (iota instanceof StringIota stringIota) return stringIota;
         throw MishapInvalidIota.ofType(iota, reverseIdx, RESOURCE_LOCATION.toString());
+    }
+
+    public static @Nullable String expectNullable(Iota iota, int reverseIdx) throws MishapInvalidIota {
+        return switch (iota) {
+            case StringIota stringIota -> stringIota.value;
+            case NullIota nullIota -> null;
+            default -> throw MishapInvalidIota.ofType(iota, reverseIdx, "hextensions:string_or_null");
+        };
     }
 }

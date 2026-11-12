@@ -6,12 +6,10 @@ import alexyzer.hextensions.util.LastMessageHandler;
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
-import at.petrak.hexcasting.api.casting.iota.NullIota;
 import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.casting.mishaps.Mishap;
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster;
-import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.NotNull;
@@ -34,13 +32,8 @@ public class OpSetChatFilter implements ConstMediaAction {
         if (!(env.getCastingEntity() instanceof ServerPlayer player))
             throw new MishapBadCaster();
 
-        var arg = args.getFirst();
-        switch (arg) {
-            case StringIota setFilter -> LastMessageHandler.setMessageFilter.accept(player, setFilter.value);
-            case NullIota clearFilter -> LastMessageHandler.setMessageFilter.accept(player, null);
-
-            default -> throw MishapInvalidIota.ofType(arg, 0, "hextensions:string_or_null");
-        }
+        var filter = StringIota.expectNullable(args.getFirst(), 0);
+        LastMessageHandler.setMessageFilter.accept(player, filter);
 
         return List.of();
     }
